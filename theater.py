@@ -1,33 +1,12 @@
-
-from urllib.request import urlopen as uReq
-from bs4 import BeautifulSoup as soup
-from datetime import date
-
-"""
-base_url = "https://www.cineplex.com/Showtimes/any-movie/cineplex-cinemas-mississauga?Date="
-date = "2/10/2019"
-made_url= base_url+date
-
-#Open and close connection to obtain page html
-uclient = uReq(base_url)
-page_html = uclient.read()
-uclient.close()
-
-#parse soup
-page_soup = soup(page_html,'html.parser')
-showtime_boxes = page_soup.find_all('div',{"class":"showtime-card showtime-single"})
-movie_title = showtime_boxes[0].find('a',{"class":"movie-details-link-click"})
-print(movie_title.text.strip())
-print(len(movie_title.text))
-print(len("The Lego Movie 2: The Second Part"))
-"""
 class Find_movies:
 
-    from urllib.request import urlopen as uReq
-    from bs4 import BeautifulSoup as soup
-    from datetime import date
+    def complete_necessary_imports(self):
+        from urllib.request import urlopen as uReq
+        from bs4 import BeautifulSoup as soup
+        from datetime import date
 
     def __init__(self):
+        self.complete_necessary_imports()
         today = date.today()
         base_url = "https://www.cineplex.com/Showtimes/any-movie/cineplex-cinemas-mississauga?Date="
         self.url = base_url+str(today.month)+"/"+str(today.day)+"/"+str(today.year)
