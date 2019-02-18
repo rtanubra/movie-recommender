@@ -1,3 +1,4 @@
 ignore_notes.txt
 email_info.txt
-__pycache__
+*.pyc
+/__pycache__/*
