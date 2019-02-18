@@ -1,6 +1,7 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 from datetime import date
+import pandas as pd
 
 this_year = date.today().year 
 
@@ -47,6 +48,14 @@ class ReviewMovies:
             except:
                 pass
     
+    def reccomend_movies(self,movie_reviews):
+        #returns 3 movies 
+        
+        for movie in movie_reviews:
+
+        pass
+
+    
     def review_page_scores(self,my_soup):
         # utilizing rotten tomatoes soup ie "https://www.rottentomatoes.com/m/Alita_Battle_Angel"
         #return audience score, tomatometer, blended score
@@ -67,7 +76,6 @@ class ReviewMovies:
         self.movies = self.underscore_movie_list(movies)
         self.movie_reviews_dict = {}
         self.movie_headers = ["blended_score","audience_score","tomato_score"]
-
         self.testing_print(self.movies)
         for movie in self.movies:
             soup = self.obtain_single_review_page(movie)
@@ -75,7 +83,7 @@ class ReviewMovies:
                 self.movie_reviews_dict[movie] = self.review_page_scores(soup)
             else:
                 self.movie_reviews_dict[movie] =[None,None,None]
-        
-        
         self.test_print_reviews(self.movie_reviews_dict)
+        self.top_three =
+
    
