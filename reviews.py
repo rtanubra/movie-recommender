@@ -50,12 +50,23 @@ class ReviewMovies:
     
     def reccomend_movies(self,movie_reviews):
         #returns 3 movies 
-        
+        blended_scores = []
         for movie in movie_reviews:
-
-        pass
-
-    
+            blended_scores.append(movie_reviews[movie][0])
+        blended_scores = sorted(blended_scores)
+        movies_to_reccomend = [None,None,None]
+        for movie in movie_reviews:
+            if movie_reviews[movie][0] == blended_scores[len(blended_scores)-1]:
+                #best movie 
+                movies_to_reccomend[0] = movie
+            elif movie_reviews[movie][0] == blended_scores[len(blended_scores)-2]:
+                #second choice 
+                movies_to_reccomend[1] = movie
+            elif movie_reviews[movie][0] == blended_scores[len(blended_scores)-3]:
+                #third choice
+                movies_to_reccomend[2] = movie
+        return movies_to_reccomend
+          
     def review_page_scores(self,my_soup):
         # utilizing rotten tomatoes soup ie "https://www.rottentomatoes.com/m/Alita_Battle_Angel"
         #return audience score, tomatometer, blended score
@@ -84,6 +95,6 @@ class ReviewMovies:
             else:
                 self.movie_reviews_dict[movie] =[None,None,None]
         self.test_print_reviews(self.movie_reviews_dict)
-        self.top_three =
+        self.top_three = self.reccomend_movies(self.movie_reviews_dict)
 
    
