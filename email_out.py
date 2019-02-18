@@ -2,12 +2,15 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import date as date
+import os 
 
 class EmailContact:
 
     def send_email(self,email_adress,top_three,movie_reviews):
         mail = smtplib.SMTP("smtp.gmail.com",587)
-        with open("email_info.txt","r") as my_file:
+        #If using crontab scheduler to run we would need full path to email info.
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        with open(f"{dir_path}/email_info.txt","r") as my_file:
             email_id = my_file.readline().strip()
             password = my_file.readline().strip()
         mail.ehlo()
