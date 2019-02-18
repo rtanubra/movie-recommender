@@ -36,13 +36,13 @@ class ReviewMovies:
         base_url= "https://www.rottentomatoes.com/m/"
         try :
             my_url = base_url+movie
-            print(my_url)
+            #print(my_url)
             page_soup = self.obtain_html_soup(my_url)
             return page_soup
         except:
             try:
                 my_url = base_url+movie+"_"+str(date.today().year)
-                print(my_url)
+                #print(my_url)
                 page_soup = self.obtain_html_soup(my_url)
                 return page_soup
             except:
@@ -87,7 +87,7 @@ class ReviewMovies:
         self.movies = self.underscore_movie_list(movies)
         self.movie_reviews_dict = {}
         self.movie_headers = ["blended_score","audience_score","tomato_score"]
-        self.testing_print(self.movies)
+        #self.testing_print(self.movies)
         for movie in self.movies:
             soup = self.obtain_single_review_page(movie)
             if soup:

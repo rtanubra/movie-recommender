@@ -29,5 +29,9 @@
     2.1 beautifulsoup4 
         
         required to scrape the web both for movie options and reviews for each movie
+    
+    2.2 python-crontab 
+
+        required to setup a scheduled runtime for this program. 
 
         
