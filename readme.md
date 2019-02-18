@@ -25,4 +25,8 @@
             1.3.2.4 Perhaps genres that you prefer? Potential user determined that we can add.
 
 2. Requirements to run the program
+
+    2.1 beautifulsoup4
+    
+    2.2 pandas 
         
