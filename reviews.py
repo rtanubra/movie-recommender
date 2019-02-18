@@ -1,7 +1,6 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 from datetime import date
-import pandas as pd
 
 this_year = date.today().year 
 
