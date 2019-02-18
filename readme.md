@@ -26,7 +26,8 @@
 
 2. Requirements to run the program
 
-    2.1 beautifulsoup4
-    
-    2.2 pandas 
+    2.1 beautifulsoup4 
+        
+        required to scrape the web both for movie options and reviews for each movie
+
         

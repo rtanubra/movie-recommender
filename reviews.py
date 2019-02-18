@@ -94,7 +94,7 @@ class ReviewMovies:
                 self.movie_reviews_dict[movie] = self.review_page_scores(soup)
             else:
                 self.movie_reviews_dict[movie] =[None,None,None]
-        self.test_print_reviews(self.movie_reviews_dict)
+        #self.test_print_reviews(self.movie_reviews_dict)
         self.top_three = self.reccomend_movies(self.movie_reviews_dict)
-
+  
    
