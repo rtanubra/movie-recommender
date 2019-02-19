@@ -43,14 +43,14 @@ class EmailContact:
         #Setup normal From, to, subject
         message["From"] = email_id
         message["To"] = send_to
-        message["Subject"] = f"{date.today()} movie reccomendations from Rotten Tomatoes"
+        message["Subject"] = "{0} movie reccomendations from Rotten Tomatoes".format(date.today())
         #attach the multiline body 
         message.attach(MIMEText(message_body,"plain"))
         #send email
         mail.sendmail(email_id, send_to,message.as_string())
         #close!
         mail.close()
-        print(f"emailed from {email_id} to {send_to}")
+        print("emailed from {0} to {1}".format(email_id,send_to))
 
     def __init__(self,receiver_email,movie_reviews,top_three):
         self.receiver_email = receiver_email
